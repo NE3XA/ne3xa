@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NE3XA — Technology company building software, school systems and programming education.">
+  <title>Blogs - NE3XA</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="NE3XA Home">
+        <img src="images/logo-light.png" alt="NE3XA" class="logo-img logo-img-light" width="180" height="52">
+        <img src="images/logo-dark.png" alt="NE3XA" class="logo-img logo-img-dark" width="180" height="52">
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Services <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5L6 7.5L9 4.5"/></svg></a>
+          <div class="dropdown">
+            <span class="dropdown-label">What we do</span>
+            <a href="software-development.html">Software Development</a>
+            <a href="web-development.html">Web Development</a>
+            <a href="mobile-app-development.html">Mobile Applications</a>
+            <a href="school-management.html">School Management Systems</a>
+            <a href="services.html">IT Consulting</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="programming-lessons.html" class="nav-link">Programming</a></div>
+        <div class="nav-item"><a href="projects.html" class="nav-link">Projects</a></div>
+        <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="school-management.html" class="btn-ne3xa-analytics">
+          <span class="btn-ne3xa-text">Browse NE3XA Analytics</span>
+          <span class="btn-ne3xa-shine" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Mobile">
+    <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+    <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+    <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+    <div class="nav-item"><a href="programming-lessons.html" class="nav-link">Programming</a></div>
+    <div class="nav-item"><a href="projects.html" class="nav-link">Projects</a></div>
+    <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></div>
+    <div class="nav-item"><a href="school-management.html" class="nav-link nav-ne3xa-mobile">Browse NE3XA Analytics</a></div>
+  </nav>
+
+<main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Blog</p>
+          <h1>Notes on software, schools and learning</h1>
+        </div>
+        <div class="filters-bar">
+          <input type="search" id="blog-search" class="search-input" placeholder="Search articles…" aria-label="Search">
+          <div class="filter-group">
+            <label for="blog-cat">Category</label>
+            <select id="blog-cat">
+              <option value="">All</option>
+              <option value="programming">Programming</option>
+              <option value="software">Software Development</option>
+              <option value="edtech">Education Technology</option>
+              <option value="school">School Management</option>
+              <option value="computers">Computers</option>
+              <option value="tips">Technology Tips</option>
+            </select>
+          </div>
+        </div>
+        <div class="blog-grid" id="blog-grid"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-bottom" style="border:none;padding-top:0;"><span>&copy; 2026 NE3XA.</span></div></div></footer>
+  <script src="js/main.js"></script>
+  <script>
+    const posts = [
+      { title: 'Why school systems fail when they ignore daily workflows', cat: 'school', date: '12 Aug 2026', excerpt: 'A system that looks complete on paper but forces teachers into extra steps will not be used consistently.' },
+      { title: 'Choosing a first programming language', cat: 'programming', date: '5 Aug 2026', excerpt: 'Python and JavaScript are common starting points. The better choice depends on what you want to build next.' },
+      { title: 'What makes a good student laptop in 2026', cat: 'computers', date: '28 Jul 2026', excerpt: 'RAM, storage type and battery matter more than marketing labels. Here is a practical checklist.' },
+      { title: 'Building report cards that parents actually understand', cat: 'edtech', date: '15 Jul 2026', excerpt: 'Clear layout and consistent grading scales reduce support calls and confusion at the end of term.' },
+      { title: 'API design habits that save time later', cat: 'software', date: '2 Jul 2026', excerpt: 'Consistent naming, versioning and error formats make integrations less painful for everyone.' },
+      { title: 'Five browser tools developers use every day', cat: 'tips', date: '20 Jun 2026', excerpt: 'DevTools panels and extensions that speed up debugging and layout work.' }
+    ];
+    function render() {
+      const q = (document.getElementById('blog-search')?.value || '').toLowerCase();
+      const cat = document.getElementById('blog-cat')?.value || '';
+      const list = posts.filter(p => {
+        if (cat && p.cat !== cat) return false;
+        if (q && !(p.title + p.excerpt).toLowerCase().includes(q)) return false;
+        return true;
+      });
+      document.getElementById('blog-grid').innerHTML = list.map(p => `
+        <article class="blog-card">
+          <div class="blog-card-img" style="background:var(--off-white);"></div>
+          <div class="blog-card-body">
+            <p class="blog-meta">${p.date} · ${p.cat}</p>
+            <h3>${p.title}</h3>
+            <p>${p.excerpt}</p>
+            <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+          </div>
+        </article>
+      `).join('') || '<p>No articles match.</p>';
+    }
+    document.getElementById('blog-search')?.addEventListener('input', render);
+    document.getElementById('blog-cat')?.addEventListener('change', render);
+    render();
+  </script>
+</body>
+</html>
