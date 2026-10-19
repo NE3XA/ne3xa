@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site info — Nexa Dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dev.css">
+</head>
+<body>
+  <div class="dev-shell">
+    <aside class="dev-sidebar">
+      <div class="dev-brand"><span class="dev-brand-mark">NX</span><div><strong>Nexa Dev</strong><span>Content control</span></div></div>
+      <nav class="dev-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="products.html">Laptops</a>
+        <a href="exams.html">Exams</a>
+        <a href="notes.html">Notes</a>
+        <a href="papers.html">Papers</a>
+        <a href="site.html" class="active">Site info</a>
+      </nav>
+      <div class="dev-sidebar-foot"><a href="../index.html">← Public website</a></div>
+    </aside>
+    <main class="dev-main">
+      <div class="dev-topbar">
+        <div><h1>Site info</h1><p>Company contact details and tagline stored for your reference or future sync.</p></div>
+        <button type="button" class="btn btn-primary" id="btn-save">Save changes</button>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <form class="form-grid" id="form">
+            <div class="field"><label>Company name</label><input id="companyName"></div>
+            <div class="field"><label>Tagline</label><input id="tagline"></div>
+            <div class="field"><label>Email</label><input id="email" type="email"></div>
+            <div class="field"><label>Phone</label><input id="phone"></div>
+            <div class="field"><label>WhatsApp</label><input id="whatsapp"></div>
+            <div class="field"><label>Hours</label><input id="hours"></div>
+            <div class="field full"><label>Address</label><input id="address"></div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/dev-store.js"></script>
+  <script src="js/dev-ui.js"></script>
+  <script>
+    (function(){
+      var site=NexaDev.getSite();
+      ['companyName','tagline','email','phone','whatsapp','hours','address'].forEach(function(k){
+        var el=document.getElementById(k);
+        if(el) el.value=site[k]||'';
+      });
+      document.getElementById('btn-save').onclick=function(){
+        var data={};
+        ['companyName','tagline','email','phone','whatsapp','hours','address'].forEach(function(k){
+          data[k]=document.getElementById(k).value.trim();
+        });
+        NexaDev.saveSite(data);
+        DevUI.toast('Site info saved','success');
+      };
+    })();
+  </script>
+</body>
+</html>
